@@ -6,6 +6,8 @@ use std::result;
 
 #[cfg(all(target_vendor = "fortanix", target_env = "sgx"))]
 use std::os::fortanix_sgx as os;
+#[cfg(target_os = "freertos")]
+use std::os::freertos as os;
 #[cfg(target_os = "hermit")]
 use std::os::hermit as os;
 #[cfg(target_os = "solid_asp3")]
